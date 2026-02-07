@@ -54,26 +54,25 @@ const features = [
 
 export function Features() {
   return (
-    <Section id="features" className="relative py-24 md:py-32">
+    <Section id="features" className="relative py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-10" />
       
       <div className="container mx-auto px-4 relative">
-        <div className="flex flex-col items-center text-center mb-20">
+        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-foreground"
+            className="fluid-h2 font-black tracking-[0.02em] text-foreground uppercase text-balance"
           >
-            SYSTEMS BUILT FOR <br />
-            <span className="text-gradient">UNFAIR ADVANTAGE</span>
+            SYSTEMS BUILT FOR <span className="text-gradient-strong">DECISIVE ADVANTAGE</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 sm:mt-6 max-w-xs sm:max-w-sm md:max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed"
+            className="mt-4 sm:mt-6 max-w-xs sm:max-w-sm md:max-w-2xl text-muted-foreground fluid-body"
           >
             Aetheris blends strategy, design, and engineering into a single cinematic system that moves markets.
           </motion.p>
@@ -86,7 +85,7 @@ export function Features() {
           viewport={{ once: true }}
           className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <motion.div
               key={feature.title}
               variants={itemVariants}

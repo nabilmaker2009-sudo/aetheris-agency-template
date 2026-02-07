@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { notFound } from "next/navigation";
-import { motion } from "framer-motion";
 import { Check, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -9,11 +8,10 @@ import { Section } from "@/components/layout-wrapper";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { getServiceBySlug } from '@/lib/blog';
-import { Service } from '@/data/services';
 
 // Update Page function props
-export default async function ServicePage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const service = await getServiceBySlug(slug);
 
   if (!service) return notFound();
@@ -67,8 +65,8 @@ export default async function ServicePage({ params }: { params: { slug: string }
 }
 
 // Optional: generate metadata for SEO
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const service = await getServiceBySlug(slug);
   if (!service) return { title: 'Service Not Found' };
 

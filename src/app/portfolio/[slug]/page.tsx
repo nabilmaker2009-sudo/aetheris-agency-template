@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, User, Code, Target, Shield, TrendingUp, Clock, Users } from "lucide-react";
+import { ArrowLeft, Code, Target, Shield, TrendingUp, Clock, Users } from "lucide-react";
 import Link from "next/link";
 
 import { Section } from "@/components/layout-wrapper";
@@ -8,11 +8,10 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { getPortfolioItemBySlug } from '@/lib/blog';
-import { CaseStudy } from '@/data/portfolio';
 
 // Update Page function props
-export default async function PortfolioCaseStudyPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function PortfolioCaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const item = await getPortfolioItemBySlug(slug);
 
   if (!item) return notFound();
@@ -175,7 +174,7 @@ export default async function PortfolioCaseStudyPage({ params }: { params: { slu
                 <div className="bg-gradient-to-br from-primary/20 to-indigo-500/20 border border-primary/30 rounded-[2rem] p-6 backdrop-blur-xl">
                   <h3 className="text-xl font-bold mb-4 uppercase tracking-tight">Ready to Start Your Project?</h3>
                   <p className="text-muted-foreground text-sm mb-6">
-                    Let's discuss how we can transform your vision into a digital masterpiece.
+                    Let&apos;s discuss how we can transform your vision into a digital masterpiece.
                   </p>
                   <Button className="w-full h-12 rounded-xl font-bold" variant="shiny" asChild>
                     <Link href="/contact">Start a Project</Link>
@@ -192,8 +191,8 @@ export default async function PortfolioCaseStudyPage({ params }: { params: { slu
 }
 
 // Optional: generate metadata for SEO
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const item = await getPortfolioItemBySlug(slug);
   if (!item) return { title: 'Portfolio Item Not Found' };
 

@@ -14,22 +14,21 @@ export function BlogPreview() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--aetheris-iris)]/10 blur-[120px] rounded-full -z-10" />
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight uppercase text-foreground"
+            className="fluid-h2 font-black tracking-tight uppercase text-foreground text-balance"
           >
-            LATEST <br />
-            <span className="text-gradient">INTELLIGENCE</span>
+            LATEST <span className="text-gradient">INTELLIGENCE</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground"
+            className="mt-4 sm:mt-6 max-w-2xl mx-auto text-muted-foreground fluid-body"
           >
             Essays on strategy, cinematic UX, and the psychology behind premium conversions.
           </motion.p>

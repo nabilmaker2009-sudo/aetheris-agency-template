@@ -58,7 +58,7 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-32">
+      <main className="pt-32 md:pt-36">
         <Section className="py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
@@ -128,42 +128,42 @@ export default function ContactPage() {
                     ) : (
                       <>
                         <div className="mb-10">
-                          <h2 className="text-3xl font-black tracking-tighter uppercase mb-2">Let's Start <span className="text-primary">A Conversation</span></h2>
-                          <p className="text-muted-foreground">Fill out the form below and we'll be in touch.</p>
+                          <h2 className="text-3xl font-black tracking-tighter uppercase mb-2">Let&apos;s Start <span className="text-primary">A Conversation</span></h2>
+                          <p className="text-muted-foreground">Fill out the form below and we&apos;ll be in touch.</p>
                         </div>
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                         <div className="space-y-2">
-                          <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Full Name</label>
+                          <label className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Full Name</label>
                           <input
                             {...register("name")}
-                            className="w-full h-14 bg-white/5 border border-white/10 rounded-2xl px-6 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                            className="w-full h-12 sm:h-14 bg-background/70 border border-border rounded-xl sm:rounded-2xl px-4 sm:px-6 text-sm sm:text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all"
                             placeholder="John Doe"
                           />
                           {errors.name && <p className="text-xs text-red-400 ml-1">{errors.name.message}</p>}
                         </div>
                         <div className="space-y-2">
-                          <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Email Address</label>
+                          <label className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Email Address</label>
                           <input
                             {...register("email")}
-                            className="w-full h-14 bg-white/5 border border-white/10 rounded-2xl px-6 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                            className="w-full h-12 sm:h-14 bg-background/70 border border-border rounded-xl sm:rounded-2xl px-4 sm:px-6 text-sm sm:text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all"
                             placeholder="john@example.com"
                           />
                           {errors.email && <p className="text-xs text-red-400 ml-1">{errors.email.message}</p>}
                         </div>
                         <div className="space-y-2">
-                          <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Subject</label>
+                          <label className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Subject</label>
                           <input
                             {...register("subject")}
-                            className="w-full h-14 bg-white/5 border border-white/10 rounded-2xl px-6 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                            className="w-full h-12 sm:h-14 bg-background/70 border border-border rounded-xl sm:rounded-2xl px-4 sm:px-6 text-sm sm:text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all"
                             placeholder="How can we help?"
                           />
                           {errors.subject && <p className="text-xs text-red-400 ml-1">{errors.subject.message}</p>}
                         </div>
                         <div className="space-y-2">
-                          <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Your Message</label>
+                          <label className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Your Message</label>
                           <textarea
                             {...register("message")}
-                            className="w-full min-h-[150px] bg-white/5 border border-white/10 rounded-2xl p-6 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+                            className="w-full min-h-[120px] sm:min-h-[150px] bg-background/70 border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 text-sm sm:text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all resize-none"
                             placeholder="Tell us about your project..."
                           />
                           {errors.message && <p className="text-xs text-red-400 ml-1">{errors.message.message}</p>}

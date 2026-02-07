@@ -26,7 +26,7 @@ export function PageHeader({ title, subtitle, badge, className }: PageHeaderProp
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-5xl md:text-8xl font-black tracking-tight leading-tight text-foreground text-display"
+        className="fluid-h1 font-black tracking-tight text-foreground text-display"
       >
         {title}
       </motion.h1>
@@ -34,7 +34,7 @@ export function PageHeader({ title, subtitle, badge, className }: PageHeaderProp
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="mt-8 max-w-2xl text-lg text-muted-foreground leading-relaxed"
+        className="mt-6 max-w-2xl text-muted-foreground fluid-body"
       >
         {subtitle}
       </motion.p>

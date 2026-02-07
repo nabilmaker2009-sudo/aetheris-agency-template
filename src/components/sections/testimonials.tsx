@@ -11,12 +11,12 @@ export function Testimonials() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--aetheris-iris)]/10 blur-[120px] rounded-full -z-10" />
       
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center mb-20">
+        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight uppercase text-foreground"
+            className="fluid-h2 font-black tracking-tight uppercase text-foreground text-balance"
           >
             TRUSTED BY <br />
             <span className="text-gradient">VISIONARIES</span>
@@ -35,7 +35,7 @@ export function Testimonials() {
             >
               <Quote className="size-10 text-primary/30 mb-8" />
               <p className="text-lg text-foreground font-medium leading-relaxed mb-8">
-                "{testimonial.quote}"
+                &ldquo;{testimonial.quote}&rdquo;
               </p>
               <div className="mt-auto pt-8 border-t border-border dark:border-white/5">
                 <p className="font-bold text-foreground dark:text-white">{testimonial.author}</p>

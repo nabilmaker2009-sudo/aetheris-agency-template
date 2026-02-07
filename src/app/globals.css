@@ -119,6 +119,22 @@
 }
 
 @layer utilities {
+  .fluid-h1 {
+    font-size: clamp(2.25rem, 3.8vw + 1rem, 5.5rem);
+    line-height: 0.95;
+  }
+  .fluid-h2 {
+    font-size: clamp(1.75rem, 2.6vw + 1rem, 3.75rem);
+    line-height: 1;
+  }
+  .fluid-h3 {
+    font-size: clamp(1.25rem, 1.2vw + 1rem, 2rem);
+    line-height: 1.1;
+  }
+  .fluid-body {
+    font-size: clamp(0.95rem, 0.5vw + 0.8rem, 1.25rem);
+    line-height: 1.7;
+  }
   .aetheris-bg {
     background:
       radial-gradient(1200px 600px at 10% -10%, color-mix(in oklab, var(--aetheris-iris) 35%, transparent), transparent),
@@ -160,10 +176,29 @@
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   }
   .text-gradient {
-    background-image: linear-gradient(120deg, var(--aetheris-ice), color-mix(in oklab, var(--aetheris-spark) 70%, transparent), color-mix(in oklab, var(--aetheris-iris) 70%, transparent));
+    background-image: linear-gradient(
+      120deg,
+      color-mix(in oklab, var(--aetheris-iris) 92%, var(--foreground)),
+      color-mix(in oklab, var(--aetheris-spark) 85%, var(--foreground)),
+      color-mix(in oklab, var(--aetheris-flare) 78%, var(--foreground))
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  .text-gradient-strong {
+    background-image: linear-gradient(120deg, color-mix(in oklab, var(--aetheris-iris) 85%, #0c0e14), color-mix(in oklab, var(--aetheris-spark) 85%, #0c0e14), color-mix(in oklab, var(--aetheris-flare) 70%, #0c0e14));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .dark .text-gradient {
+    background-image: linear-gradient(
+      120deg,
+      color-mix(in oklab, var(--aetheris-ice) 95%, var(--foreground)),
+      color-mix(in oklab, var(--aetheris-spark) 80%, var(--foreground)),
+      color-mix(in oklab, var(--aetheris-iris) 80%, var(--foreground))
+    );
   }
   .text-display {
     font-family: var(--font-display);
@@ -217,9 +252,18 @@
     font-family: var(--font-sans);
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  * {
+    min-width: 0;
   }
 }
 

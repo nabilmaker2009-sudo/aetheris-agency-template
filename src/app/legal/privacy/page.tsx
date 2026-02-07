@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Section } from "@/components/layout-wrapper"
-import { Shield, Eye, Lock, Globe } from "lucide-react"
+import { Eye, Lock, Globe } from "lucide-react"
 
 export default function PrivacyPage() {
   return (

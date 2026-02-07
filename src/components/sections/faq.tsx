@@ -14,7 +14,7 @@ export function FAQ() {
     <Section id="faq" className="relative py-24 md:py-32">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-20">
+          <div className="flex flex-col items-center text-center mb-16 md:mb-20">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -28,7 +28,7 @@ export function FAQ() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-black tracking-tight uppercase text-foreground"
+              className="fluid-h2 font-black tracking-tight uppercase text-foreground text-balance"
             >
               QUESTIONS, <br />
               <span className="text-gradient">ANSWERED</span>

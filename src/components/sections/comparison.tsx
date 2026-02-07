@@ -68,7 +68,7 @@ export function Comparison() {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--aetheris-iris)]/15 blur-[120px] rounded-full -z-10" />
       
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center mb-20">
+        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -82,17 +82,16 @@ export function Comparison() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight text-foreground"
+            className="fluid-h2 font-black tracking-tight text-foreground text-balance"
           >
-            NOT ALL AGENCIES <br />
-            ARE BUILT <span className="text-gradient">EQUAL</span>
+            NOT ALL AGENCIES ARE BUILT <span className="text-gradient">EQUAL</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed"
+            className="mt-4 sm:mt-6 max-w-2xl text-muted-foreground fluid-body"
           >
             Most templates give you a shell. Aetheris delivers an engineered ecosystem built for credibility, performance, and premium positioning.
           </motion.p>

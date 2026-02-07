@@ -15,8 +15,6 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [scrolled, setScrolled] = React.useState(false)
   const pathname = usePathname()
-  const { theme, setTheme } = useTheme()
-
   React.useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
@@ -31,26 +29,26 @@ export function Navbar() {
         "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300 rounded-[1.5rem] border backdrop-blur-md",
         scrolled
           ? "bg-background/85 border-border py-2 shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
-          : "bg-background/50 border-border dark:border-white/10 py-4 shadow-none"
+          : "bg-background/50 border-border dark:border-white/10 py-3 md:py-4 shadow-none"
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-3 group">
+        <div className="flex items-center gap-4 md:gap-6 min-h-[3.5rem] md:min-h-[4rem]">
+          <Link href="/" className="flex items-center space-x-3 group shrink-0">
             <div className="size-11 rounded-2xl bg-gradient-to-br from-[var(--aetheris-iris)] to-[var(--aetheris-spark)] flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.35)] group-hover:scale-110 transition-transform">
               <span className="text-xl font-black text-background">{siteConfig.logo[0]}</span>
             </div>
-            <span className="text-2xl font-black tracking-[0.08em] uppercase text-foreground">{siteConfig.name}</span>
+            <span className="text-lg md:text-xl lg:text-2xl font-black tracking-[0.08em] uppercase text-foreground">{siteConfig.name}</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-6 min-w-0 flex-wrap">
             {siteConfig.navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-xs font-semibold tracking-[0.25em] uppercase transition-colors hover:text-primary relative py-1",
+                  "text-[0.6rem] sm:text-[0.65rem] xl:text-xs font-semibold tracking-[0.16em] xl:tracking-[0.25em] uppercase transition-colors hover:text-primary relative py-1 whitespace-nowrap",
                   pathname === link.href ? "text-primary" : "text-muted-foreground"
                 )}
               >
@@ -65,15 +63,15 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-3 shrink-0">
             <ThemeToggle />
-            <Button size="sm" variant="shiny" asChild>
+            <Button size="sm" variant="shiny" className="px-4 lg:px-5 hidden xl:inline-flex" asChild>
               <Link href="/contact">Request Proposal</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-4 md:hidden">
+          <div className="ml-auto flex items-center space-x-3 lg:hidden">
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -94,7 +92,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto", y: 0 }}
             exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="md:hidden border-t bg-background/95 backdrop-blur-xl px-4 pb-6 pt-2 overflow-hidden"
+            className="lg:hidden border-t bg-background/95 backdrop-blur-xl px-4 pb-6 pt-2 overflow-hidden"
           >
             <div className="flex flex-col space-y-4 pt-4">
               {siteConfig.navLinks.map((link) => (

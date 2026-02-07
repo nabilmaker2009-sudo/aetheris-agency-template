@@ -22,7 +22,7 @@ export default function ServicesPage() {
   return (
     <main className="flex min-h-screen flex-col">
       <Navbar />
-      <Section className="relative pt-48 pb-24 overflow-hidden">
+      <Section className="relative pt-48 md:pt-56 pb-24 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/10 blur-[120px] rounded-full -z-10" />
         
         <div className="container mx-auto px-4">

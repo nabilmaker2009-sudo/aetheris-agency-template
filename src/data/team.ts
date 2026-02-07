@@ -1,10 +1,10 @@
-import { User, Code, Palette, Zap, Shield, Brain } from "lucide-react"
+import { type LucideIcon, User, Code, Palette, Zap, Shield, Brain } from "lucide-react"
 
 export interface TeamMember {
   name: string;
   role: string;
   bio: string;
-  icon: any;
+  icon: LucideIcon;
 }
 
 export const team: TeamMember[] = [

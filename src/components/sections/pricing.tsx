@@ -11,12 +11,12 @@ export function Pricing() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[var(--aetheris-spark)]/10 blur-[120px] rounded-full -z-10" />
       
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center mb-20">
+        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight uppercase text-foreground"
+            className="fluid-h2 font-black tracking-tight uppercase text-foreground text-balance"
           >
             PRICING FOR <br />
             <span className="text-gradient">SERIOUS BRANDS</span>
@@ -26,13 +26,13 @@ export function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed"
+            className="mt-4 sm:mt-6 max-w-2xl text-muted-foreground fluid-body"
           >
             We engage with a limited number of partners per quarter. Choose the depth of transformation you need.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {pricingTiers.map((tier, index) => (
             <PricingCard key={tier.name} tier={tier} index={index} />
           ))}

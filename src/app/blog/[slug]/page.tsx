@@ -9,8 +9,8 @@ import { Footer } from "@/components/footer";
 import { getBlogPostBySlug } from '@/lib/blog';
 
 // Update Page function props
-export default async function BlogPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
 
   if (!post) return notFound();
@@ -56,7 +56,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-indigo-500/5 z-0" />
               <div className="absolute inset-0 flex items-center justify-center z-10 opacity-10 group-hover:opacity-20 transition-opacity">
                 <div className="text-8xl text-primary">
-                  {post.title.split(' ').map((word: string, idx: number) => word[0]).join('').substring(0, 3)}
+                  {post.title.split(' ').map((word: string) => word[0]).join('').substring(0, 3)}
                 </div>
               </div>
             </div>
@@ -79,8 +79,8 @@ export default async function BlogPage({ params }: { params: { slug: string } })
 }
 
 // Optional: generate metadata for SEO
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
   if (!post) return { title: 'Blog Not Found' };
 

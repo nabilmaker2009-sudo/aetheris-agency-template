@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col">
       <Navbar />
-      <Section className="relative pt-48 pb-24 overflow-hidden">
+      <Section className="relative pt-48 md:pt-56 pb-24 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[var(--aetheris-iris)]/15 blur-[120px] rounded-full -z-10" />
 
         <div className="container mx-auto px-4">

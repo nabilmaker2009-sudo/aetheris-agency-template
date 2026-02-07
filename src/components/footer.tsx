@@ -1,3 +1,6 @@
+ "use client"
+
+import * as React from "react"
 import Link from "next/link"
 import { Twitter, Linkedin, Github } from "lucide-react"
 
@@ -23,6 +26,38 @@ const footerLinks = {
 }
 
 export function Footer() {
+  const [email, setEmail] = React.useState("")
+  const [status, setStatus] = React.useState<"idle" | "success" | "error">("idle")
+  const [message, setMessage] = React.useState("")
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const target = email.trim()
+    if (!target) {
+      setStatus("error")
+      setMessage("Please enter your email.")
+      return
+    }
+    const allowedDomains = [
+      "gmail.com",
+      "yahoo.com",
+      "outlook.com",
+      "hotmail.com",
+      "icloud.com",
+      "proton.me",
+      "protonmail.com",
+    ]
+    const domain = target.split("@")[1]?.toLowerCase()
+    if (!domain || !allowedDomains.includes(domain)) {
+      setStatus("error")
+      setMessage("Use Gmail, Yahoo, Outlook, Hotmail, iCloud, or Proton email.")
+      return
+    }
+    setStatus("success")
+    setMessage("Subscribed. Expect the next brief soon.")
+    setEmail("")
+  }
+
   return (
     <footer className="relative border-t bg-background/60 backdrop-blur-xl overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
@@ -91,15 +126,25 @@ export function Footer() {
           <div className="col-span-1">
             <h3 className="text-sm font-bold uppercase tracking-widest text-foreground">Stay Informed</h3>
             <p className="mt-6 text-sm text-muted-foreground">High-signal insights for founders.</p>
-            <form className="mt-4 flex flex-col space-y-2" action="/contact" method="get">
+            <form className="mt-4 flex flex-col space-y-2" onSubmit={handleSubmit} noValidate>
               <input
                 type="email"
                 name="email"
                 placeholder="Email address"
-                className="w-full rounded-lg border border-border dark:border-white/10 bg-muted/50 dark:bg-white/5 px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-sm shadow-primary/10"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                inputMode="email"
+                autoComplete="email"
+                className="w-full rounded-lg border border-border dark:border-white/10 bg-muted/50 dark:bg-white/5 px-4 py-2 text-sm sm:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-sm shadow-primary/10"
               />
               <Button variant="shiny" size="sm" className="w-full" type="submit">Subscribe</Button>
             </form>
+            {status !== "idle" && (
+              <p className={`mt-3 text-xs ${status === "success" ? "text-foreground" : "text-destructive"}`}>
+                {message}
+              </p>
+            )}
           </div>
         </div>
         <div className="mt-20 border-t border-border dark:border-white/5 pt-10 text-center md:flex md:items-center md:justify-between shadow-[0_-1px_0_0_rgba(99,102,241,0.1)]">

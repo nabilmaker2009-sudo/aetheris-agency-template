@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Section } from "@/components/layout-wrapper"
-import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/ui/page-header"
 import { blogPosts } from "@/data/blog"
 import { Calendar, ArrowRight } from "lucide-react"
@@ -14,7 +13,7 @@ export default function BlogPage() {
   return (
     <main className="flex min-h-screen flex-col">
       <Navbar />
-      <Section className="relative pt-48 pb-24 overflow-hidden">
+      <Section className="relative pt-48 md:pt-56 pb-24 overflow-hidden">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 blur-[120px] rounded-full -z-10" />
         
         <div className="container mx-auto px-4">
@@ -38,7 +37,7 @@ export default function BlogPage() {
                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-indigo-500/5 z-0" />
                    <div className="absolute inset-0 flex items-center justify-center z-10 opacity-10 group-hover:opacity-20 transition-opacity">
                      <div className="text-6xl text-primary">
-                       {post.title.split(' ').map((word, idx) => word[0]).join('').substring(0, 2)}
+                       {post.title.split(' ').map((word) => word[0]).join('').substring(0, 2)}
                      </div>
                    </div>
                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md text-[10px] font-bold text-primary uppercase tracking-widest border border-primary/30">

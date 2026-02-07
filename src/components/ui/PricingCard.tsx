@@ -22,7 +22,7 @@ export function PricingCard({ tier, index }: PricingCardProps) {
       whileHover={{ y: -8 }}
       className={cn(
         "relative flex flex-col rounded-[2.5rem] border bg-card/60 p-10 backdrop-blur-xl transition-all duration-300 glow-card",
-        tier.featured ? "border-primary ring-4 ring-primary/10 shadow-2xl scale-105 z-10" : "border-border dark:border-white/10"
+        tier.featured ? "border-primary ring-4 ring-primary/10 shadow-2xl lg:scale-105 lg:z-10" : "border-border dark:border-white/10"
       )}
     >
       {tier.badge && (
@@ -32,9 +32,9 @@ export function PricingCard({ tier, index }: PricingCardProps) {
       )}
       
       <div className="mb-10">
-        <h3 className="text-xl font-bold tracking-widest uppercase text-muted-foreground">{tier.name}</h3>
+        <h3 className="text-lg sm:text-xl font-bold tracking-widest uppercase text-muted-foreground">{tier.name}</h3>
         <div className="mt-6 flex items-baseline gap-2">
-          <span className="text-6xl font-black tracking-tighter">{tier.price}</span>
+          <span className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter break-words">{tier.price}</span>
         </div>
         <p className="mt-6 text-muted-foreground leading-relaxed">{tier.description}</p>
       </div>
