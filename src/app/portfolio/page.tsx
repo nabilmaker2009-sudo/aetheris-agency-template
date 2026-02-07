@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Section } from "@/components/layout-wrapper"
@@ -46,19 +46,13 @@ export default function PortfolioPage() {
             ))}
           </div>
 
-          <motion.div 
-            layout
-            className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-2"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project) => (
-                <Link href={`/portfolio/${project.slug}`} className="block" key={project.slug}>
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-2">
+            {filteredProjects.map((project, index) => (
+              <Link href={`/portfolio/${project.slug}`} className="block" key={project.slug}>
                 <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
                   className="group relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden border border-border dark:border-white/10 bg-card/70 backdrop-blur-sm lg:hover:shadow-xl lg:hover:shadow-primary/10 aspect-auto lg:aspect-[16/10]"
                 >
                   <div className="absolute inset-0 bg-grid opacity-20 transition-transform lg:group-hover:scale-110" />
@@ -93,10 +87,9 @@ export default function PortfolioPage() {
                     </div>
                   </div>
                 </motion.div>
-                </Link>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+              </Link>
+            ))}
+          </div>
         </div>
       </Section>
       <Footer />

@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Moon, Sun } from "lucide-react"
+import { Menu, X, Moon, Sun, Sparkles } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
@@ -71,8 +71,18 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="ml-auto flex items-center space-x-3 lg:hidden">
+          <div className="ml-auto flex items-center space-x-2 lg:hidden">
             <ThemeToggle />
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              className="hidden md:inline-flex rounded-full"
+            >
+              <Link href="/contact" aria-label="Request proposal">
+                <Sparkles className="size-4 text-primary" />
+              </Link>
+            </Button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-muted-foreground hover:text-primary"
