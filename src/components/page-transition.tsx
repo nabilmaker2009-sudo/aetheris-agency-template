@@ -16,9 +16,14 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     return () => query.removeEventListener("change", update)
   }, [])
 
+  if (reduceMotion) {
+    // Disable route transition animation on tablet/mobile to avoid blank-first-paint issues.
+    return <div key={pathname}>{children}</div>
+  }
+
   return (
-    <MotionConfig reducedMotion={reduceMotion ? "always" : "user"}>
-      <AnimatePresence mode="wait">
+    <MotionConfig reducedMotion="user">
+      <AnimatePresence mode="sync" initial={false}>
         <motion.div
           key={pathname}
           initial={{ opacity: 0, y: 10 }}

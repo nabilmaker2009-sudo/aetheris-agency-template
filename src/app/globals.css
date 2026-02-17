@@ -163,6 +163,12 @@
     pointer-events: none;
     z-index: 0;
   }
+  @media (max-width: 1024px) {
+    .aetheris-bg::before,
+    .aetheris-bg::after {
+      display: none;
+    }
+  }
   .glass {
     background-color: rgb(255 255 255 / 0.1);
     backdrop-filter: blur(12px);

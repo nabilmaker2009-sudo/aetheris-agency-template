@@ -51,7 +51,7 @@ export function Newsletter() {
         </p>
         <form
           onSubmit={handleSubmit}
-          className="mt-8 flex w-full max-w-md flex-col gap-2 sm:flex-row"
+          className="mt-8 flex w-full max-w-xl flex-col gap-2 sm:flex-row"
           noValidate
         >
           <input
@@ -62,7 +62,7 @@ export function Newsletter() {
             onChange={(e) => setEmail(e.target.value)}
             inputMode="email"
             autoComplete="email"
-            className="h-11 sm:h-12 flex-1 rounded-md border border-border bg-background/60 px-4 text-sm sm:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+            className="h-11 sm:h-12 w-full flex-1 rounded-md border border-border bg-background/60 px-4 text-sm sm:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
           />
           <Button
             type="submit"
