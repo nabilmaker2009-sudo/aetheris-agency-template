@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, AnimatePresence, MotionConfig } from "framer-motion"
+import { motion, MotionConfig } from "framer-motion"
 import { usePathname } from "next/navigation"
 import * as React from "react"
 
@@ -23,17 +23,14 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
 
   return (
     <MotionConfig reducedMotion="user">
-      <AnimatePresence mode="sync" initial={false}>
-        <motion.div
-          key={pathname}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-        >
-          {children}
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        key={pathname}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {children}
+      </motion.div>
     </MotionConfig>
   )
 }
