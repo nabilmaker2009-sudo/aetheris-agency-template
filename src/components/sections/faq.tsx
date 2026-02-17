@@ -17,8 +17,7 @@ export function FAQ() {
           <div className="flex flex-col items-center text-center mb-16 md:mb-20">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, scale: 1 }}
               className="mb-6 inline-flex items-center gap-2 rounded-full aetheris-badge px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-foreground/80"
             >
               <HelpCircle className="size-4" />
@@ -26,8 +25,7 @@ export function FAQ() {
             </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               className="fluid-h2 font-black tracking-tight uppercase text-foreground text-balance"
             >
               QUESTIONS, <br />
@@ -40,8 +38,7 @@ export function FAQ() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className={cn(
                   "rounded-[2rem] border border-border dark:border-white/10 bg-card/60 backdrop-blur-xl overflow-hidden transition-all duration-300 glow-card",

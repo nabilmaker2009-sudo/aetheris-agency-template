@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Section } from "@/components/layout-wrapper"
@@ -28,11 +27,8 @@ export default function AboutPage() {
               { icon: Rocket, title: "Our Vision", text: "To become the quiet engine behind the most influential brands in the world." },
               { icon: Award, title: "Our Values", text: "Precision, ambition, and conviction. We build with standards that endure." },
             ].map((item, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
                 className="p-10 rounded-[2.5rem] border border-border dark:border-white/10 bg-card/60 backdrop-blur-xl hover:bg-accent/40 transition-all glow-card"
               >
                 <div className="size-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8">
@@ -40,7 +36,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-2xl font-black tracking-tight mb-4 uppercase text-foreground">{item.title}</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">{item.text}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -52,11 +48,8 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {team.map((member, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.1 }}
                   className="group relative"
                 >
                   <div className="aspect-[4/5] rounded-[3rem] overflow-hidden border border-border dark:border-white/10 bg-card/60 backdrop-blur-xl mb-8 relative glow-card">
@@ -68,7 +61,7 @@ export default function AboutPage() {
                   <h3 className="text-2xl font-black tracking-tight text-foreground">{member.name}</h3>
                   <p className="text-sm font-bold text-primary uppercase tracking-widest mt-1">{member.role}</p>
                   <p className="mt-4 text-muted-foreground leading-relaxed">{member.bio}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

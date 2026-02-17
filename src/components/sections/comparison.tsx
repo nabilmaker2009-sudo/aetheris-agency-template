@@ -71,8 +71,7 @@ export function Comparison() {
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, scale: 1 }}
             className="mb-6 inline-flex items-center gap-2 rounded-full aetheris-badge px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-foreground/80"
           >
             <ShieldCheck className="size-4" />
@@ -80,16 +79,14 @@ export function Comparison() {
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             className="fluid-h2 font-black tracking-tight text-foreground text-balance"
           >
             NOT ALL AGENCIES ARE BUILT <span className="text-gradient">EQUAL</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="mt-4 sm:mt-6 max-w-2xl text-muted-foreground fluid-body"
           >

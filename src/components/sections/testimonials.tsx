@@ -14,8 +14,7 @@ export function Testimonials() {
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             className="fluid-h2 font-black tracking-tight uppercase text-foreground text-balance"
           >
             TRUSTED BY <br />
@@ -28,8 +27,7 @@ export function Testimonials() {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className="relative p-10 rounded-[2.5rem] border border-border dark:border-white/10 bg-card/60 backdrop-blur-xl glow-card"
             >

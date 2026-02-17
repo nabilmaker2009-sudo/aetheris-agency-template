@@ -39,8 +39,7 @@ export default function ServicesPage() {
                 <motion.div
                   key={service.title}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   className="group relative rounded-[2.5rem] border border-border dark:border-white/10 bg-card/50 dark:bg-white/5 p-10 backdrop-blur-xl transition-all hover:bg-accent dark:hover:bg-white/10 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20"
                 >

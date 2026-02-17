@@ -34,7 +34,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center gap-4 md:gap-6 min-h-[3.5rem] md:min-h-[4rem]">
-          <Link href="/" className="flex items-center space-x-3 group shrink-0">
+          <Link href="/" prefetch className="flex items-center space-x-3 group shrink-0">
             <div className="size-11 rounded-2xl bg-gradient-to-br from-[var(--aetheris-iris)] to-[var(--aetheris-spark)] flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.35)] group-hover:scale-110 transition-transform">
               <span className="text-xl font-black text-background">{siteConfig.logo[0]}</span>
             </div>
@@ -47,6 +47,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
+                prefetch
                 className={cn(
                   "text-[0.6rem] sm:text-[0.65rem] xl:text-xs font-semibold tracking-[0.16em] xl:tracking-[0.25em] uppercase transition-colors hover:text-primary relative py-1 whitespace-nowrap",
                   pathname === link.href ? "text-primary" : "text-muted-foreground"
@@ -66,7 +67,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center space-x-3 shrink-0">
             <ThemeToggle />
             <Button size="sm" variant="shiny" className="px-4 lg:px-5 hidden xl:inline-flex" asChild>
-              <Link href="/contact">Request Proposal</Link>
+              <Link href="/contact" prefetch>Request Proposal</Link>
             </Button>
           </div>
 
@@ -79,7 +80,7 @@ export function Navbar() {
               size="icon"
               className="hidden md:inline-flex rounded-full"
             >
-              <Link href="/contact" aria-label="Request proposal">
+              <Link href="/contact" prefetch aria-label="Request proposal">
                 <Sparkles className="size-4 text-primary" />
               </Link>
             </Button>
@@ -109,6 +110,7 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
+                  prefetch
                   onClick={() => setIsOpen(false)}
                   className={cn(
                     "text-lg font-medium transition-colors hover:text-primary px-2 py-1 rounded-lg hover:bg-white/5",
@@ -119,7 +121,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Button className="w-full h-12 text-lg font-bold" asChild>
-                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                <Link href="/contact" prefetch onClick={() => setIsOpen(false)}>
                   Request Proposal
                 </Link>
               </Button>

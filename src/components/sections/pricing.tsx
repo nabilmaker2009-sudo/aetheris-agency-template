@@ -14,8 +14,7 @@ export function Pricing() {
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             className="fluid-h2 font-black tracking-tight uppercase text-foreground text-balance"
           >
             PRICING FOR <br />
@@ -23,8 +22,7 @@ export function Pricing() {
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="mt-4 sm:mt-6 max-w-2xl text-muted-foreground fluid-body"
           >

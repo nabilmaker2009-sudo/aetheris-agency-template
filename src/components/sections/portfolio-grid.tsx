@@ -15,16 +15,14 @@ export function PortfolioGrid() {
           <div className="max-w-2xl mx-auto md:mx-0">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               className="fluid-h2 font-black tracking-tight uppercase text-foreground text-balance"
             >
               SELECTED <span className="text-gradient">ENGAGEMENTS</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
           className="mt-4 sm:mt-6 text-muted-foreground fluid-body"
           >
@@ -41,8 +39,7 @@ export function PortfolioGrid() {
             <Link href={`/portfolio/${item.slug}`} className="block" key={item.slug}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-card/70 border border-border dark:border-white/10 glow-card aspect-auto md:aspect-[16/10]"
             >

@@ -17,16 +17,14 @@ export function BlogPreview() {
         <div className="text-center mb-12 md:mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             className="fluid-h2 font-black tracking-tight uppercase text-foreground text-balance"
           >
             LATEST <span className="text-gradient">INTELLIGENCE</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="mt-4 sm:mt-6 max-w-2xl mx-auto text-muted-foreground fluid-body"
           >
@@ -39,8 +37,7 @@ export function BlogPreview() {
             <motion.div
               key={post.slug}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className="group flex flex-col rounded-3xl border border-border dark:border-white/10 bg-card/60 overflow-hidden hover:bg-accent/40 transition-colors glow-card"
             >
