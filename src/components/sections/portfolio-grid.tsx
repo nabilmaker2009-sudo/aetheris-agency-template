@@ -59,7 +59,7 @@ export function PortfolioGrid() {
                   <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-foreground uppercase leading-[1.05]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground line-clamp-4">
+                  <p className="mt-3 sm:mt-4 text-sm sm:text-base text-foreground/75 dark:text-muted-foreground line-clamp-4">
                     {item.description}
                   </p>
                 </div>
@@ -72,7 +72,7 @@ export function PortfolioGrid() {
                         className="rounded-2xl md:rounded-[1.25rem] border border-border bg-background/80 px-4 py-4 backdrop-blur-xl shadow-[0_12px_30px_rgba(0,0,0,0.12)] md:shadow-[0_10px_24px_rgba(0,0,0,0.1)]"
                       >
                         <div className="text-lg sm:text-2xl font-black text-foreground">{res.value}</div>
-                        <div className="text-[0.55rem] sm:text-xs font-bold text-muted-foreground uppercase tracking-widest">{res.label}</div>
+                        <div className="text-[0.55rem] sm:text-xs font-bold text-foreground/70 dark:text-muted-foreground uppercase tracking-widest">{res.label}</div>
                       </div>
                     ))}
                   </div>

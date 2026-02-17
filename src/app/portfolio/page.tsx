@@ -73,7 +73,7 @@ export default function PortfolioPage() {
                   <div className="relative lg:absolute lg:inset-0 flex flex-col items-center justify-center p-6 sm:p-10 lg:p-12 lg:group-hover:opacity-0 transition-opacity">
                      <span className="text-[0.65rem] sm:text-xs font-bold text-primary mb-3 tracking-[0.2em] uppercase text-center">{project.client}</span>
                      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-foreground dark:text-white tracking-tight text-center uppercase leading-[1.1]">{project.title}</h3>
-                     <div className="mt-3 text-center text-xs sm:text-sm text-muted-foreground">{project.category}</div>
+                     <div className="mt-3 text-center text-xs sm:text-sm text-foreground/75 dark:text-muted-foreground">{project.category}</div>
                   </div>
 
                   <div className="lg:hidden relative p-5 sm:p-6 border-t border-border dark:border-white/10 bg-card/70">
@@ -81,7 +81,7 @@ export default function PortfolioPage() {
                       {project.results.slice(0, 2).map((res) => (
                         <div key={res.label} className="rounded-2xl border border-border bg-card/70 px-4 py-3 backdrop-blur-xl glow-card">
                           <div className="text-lg sm:text-xl font-black text-foreground">{res.value}</div>
-                          <div className="text-[0.55rem] sm:text-xs font-bold text-muted-foreground uppercase tracking-widest">{res.label}</div>
+                          <div className="text-[0.55rem] sm:text-xs font-bold text-foreground/70 dark:text-muted-foreground uppercase tracking-widest">{res.label}</div>
                         </div>
                       ))}
                     </div>

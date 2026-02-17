@@ -61,7 +61,7 @@ export default function BlogPage() {
                 <div className="mt-auto">
                   <Link 
                     href={`/blog/${post.slug}`} 
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-black dark:text-white hover:text-primary transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-slate-900 dark:text-white hover:text-primary transition-colors"
                   >
                     Read Full Story <ArrowRight className="size-4" />
                   </Link>

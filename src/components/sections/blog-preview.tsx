@@ -67,7 +67,7 @@ export function BlogPreview() {
                 <div className="mt-auto">
                   <Link 
                     href={`/blog/${post.slug}`} 
-                    className="inline-flex items-center text-sm font-bold text-black dark:text-white hover:text-primary transition-colors uppercase tracking-widest"
+                    className="inline-flex items-center text-sm font-bold text-slate-900 dark:text-white hover:text-primary transition-colors uppercase tracking-widest"
                   >
                     Read Full Article <ArrowRight className="ml-2 size-4" />
                   </Link>
